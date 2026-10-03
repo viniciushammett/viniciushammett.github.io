@@ -1,0 +1,206 @@
+.projects {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: var(--space-3);
+}
+
+.project-card {
+  min-height: 390px;
+
+  padding: var(--space-4);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  transition:
+    transform var(--transition-normal),
+    background var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+
+  background: var(--color-surface-hover);
+  border-color: var(--color-border-hover);
+}
+
+.project-card--featured {
+  position: relative;
+
+  overflow: hidden;
+
+  grid-column: 1 / -1;
+
+  min-height: 470px;
+
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(139, 92, 246, 0.13),
+      transparent 24rem
+    ),
+    var(--color-surface);
+}
+
+.project-card--featured::after {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  right: 5%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  opacity: 0.2;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    );
+
+  background-size: 28px 28px;
+
+  pointer-events: none;
+}
+
+.project-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.project-card__header {
+  display: flex;
+  justify-content: space-between;
+
+  gap: var(--space-3);
+}
+
+.project-card__number {
+  color: var(--color-text-subtle);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.project-card__category {
+  color: var(--color-primary);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.project-card__body {
+  max-width: 760px;
+
+  margin-block: var(--space-6) var(--space-4);
+}
+
+.project-card__body h3 {
+  margin-bottom: var(--space-2);
+
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.project-card__body p {
+  max-width: 700px;
+
+  color: var(--color-text-muted);
+
+  line-height: 1.75;
+}
+
+.project-card__tags {
+  margin-top: var(--space-3);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: var(--space-1);
+}
+
+.project-card__footer {
+  padding-top: var(--space-3);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: var(--space-3);
+
+  border-top: 1px solid var(--color-border);
+}
+
+.project-card__footer span {
+  color: var(--color-text-subtle);
+
+  font-size: 0.78rem;
+}
+
+.project-card__footer a {
+  font-size: 0.86rem;
+  font-weight: 650;
+
+  transition: color var(--transition-fast);
+}
+
+.project-card__footer a:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card--featured {
+    grid-column: auto;
+  }
+
+  .project-card,
+  .project-card--featured {
+    min-height: auto;
+  }
+
+  .project-card__body {
+    margin-block: var(--space-5);
+  }
+
+  .project-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Engineering Work refinements */
+
+.project-card__footer {
+  justify-content: flex-start;
+}
+
+.project-card__footer span {
+  color: var(--color-text-subtle);
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+}

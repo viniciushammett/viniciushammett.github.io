@@ -1,0 +1,9 @@
+{
+  "name": "Vinicius Teixeira | SRE & Platform Engineer",
+  "short_name": "Vinicius Teixeira",
+  "description": "Site Reliability, Platform and Cloud Engineering portfolio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090e",
+  "theme_color": "#09090e"
+}

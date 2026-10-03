@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://viniciushammett.github.io/sitemap.xml
